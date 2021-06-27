@@ -120,6 +120,7 @@ async def main(bot: Client, message: Message):
                     [
                         [InlineKeyboardButton("Ban User", callback_data=f"ban_user_{str(message.chat.id)}")]
                     ]
+
                 )
             )
         except Exception as err:
