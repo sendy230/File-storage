@@ -49,7 +49,7 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")
+                        InlineKeyboardButton("Developer", url="https://t.me/fybadmin")
                     ]
                 ]
             )
@@ -111,9 +111,10 @@ async def main(bot: Client, message: Message):
                 f"{share_link}",
                 parse_mode="Markdown",
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("Open Link", url=share_link)],
-                     [InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates"),
-                      InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")]]
+                    [[InlineKeyboardButton("Buka Link", url=share_link)]
+                  ]
+     
+
                 ),
                 disable_web_page_preview=True
             )
