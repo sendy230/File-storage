@@ -27,6 +27,8 @@ Dapatkan link untuk setiap file yang kamu upload
 🧑🏻‍💻 **Developer:** @fybadmin
 """
 	HOME_TEXT = """
-Hi, [{}](tg://user?id={})\n\n
-Have a nice day's 🏞️
+Hi, [{}](tg://user?id={})!
+Have a nice day's 👋
+Terimakasih Sudah Subscribe
+
 """
