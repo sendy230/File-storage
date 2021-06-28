@@ -27,7 +27,6 @@ Dapatkan link untuk setiap file yang kamu upload
 🧑🏻‍💻 **Developer:** @fybadmin
 """
 	HOME_TEXT = """
-Hi, [{}](tg://user?id={})\n\n Bot ini berguna untuk mendapatkan link dari file yang kamu upload.
-
-Kirim file dan dapatkan link untuk di share!
+Hi, [{}](tg://user?id={})\n\n
+Have a nice day's 🏞️
 """
