@@ -112,7 +112,7 @@ async def main(bot: Client, message: Message):
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton("Buka Link", url=share_link)]]
                 ),
-                disable_web_page_preview=True
+                disable_web_page_preview=False
             )
         except FloodWait as sl:
             await asyncio.sleep(sl.x)
