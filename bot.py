@@ -70,12 +70,11 @@ async def start(bot: Client, cmd: Message):
             elif Config.FORWARD_AS_COPY is False:
                 send_stored_file = await bot.forward_messages(chat_id=cmd.from_user.id, from_chat_id=Config.DB_CHANNEL,
                                                               message_ids=file_id)
-         await send_stored_file.reply_text(
-                f"**Here is Sharable Link of this file:** https://t.me/{Config.BOT_USERNAME}?start=AbirHasan2005_{file_id}\n\n__To Retrive the Stored File, just open the link!__",
-                disable_web_page_preview=False, quote=False)
+            await send_stored_file.reply_text(
+                f"https://t.me/{Config.BOT_USERNAME}?start=_{file_id}\n\n",
+                disable_web_page_preview=True, quote=True)
         except Exception as err:
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
-
 
 
 @Bot.on_message((filters.document | filters.video | filters.audio) & ~filters.edited)
@@ -95,7 +94,7 @@ async def main(bot: Client, message: Message):
             else:
                 pass
         if message.from_user.id in Config.BANNED_USERS:
-            await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://t.me/linux_repo)",
+            await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://t.me/fybadmin)",
                                      disable_web_page_preview=True)
             return
         if Config.OTHER_USERS_CAN_SAVE_FILE is False:
@@ -112,10 +111,7 @@ async def main(bot: Client, message: Message):
                 f"{share_link}",
                 parse_mode="Markdown",
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton()]
-                  ]
-     
-
+                    [[InlineKeyboardButton("Buka Link", url=share_link)]]
                 ),
                 disable_web_page_preview=True
             )
@@ -298,7 +294,7 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Source Codes of Bot",
+                        InlineKeyboardButton("Developer",
                                              url="https://t.me/fybadmin")
                     ]
                 ]
@@ -312,7 +308,7 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Source Codes of Bot",
+                        InlineKeyboardButton("Developer",
                                              url="https://t.me/fybadmin")
                     ]
                 ]
@@ -326,7 +322,7 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")
+                        InlineKeyboardButton("Developer", url="https://t.me/fybadmin")
                     ]
                 ]
             )
@@ -338,18 +334,18 @@ async def button(bot: Client, cmd: CallbackQuery):
                 user = await bot.get_chat_member(int(Config.UPDATES_CHANNEL), cmd.message.chat.id)
                 if user.status == "kicked":
                     await cmd.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).",
+                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/fybadmin).",
                         parse_mode="markdown",
                         disable_web_page_preview=True
                     )
                     return
             except UserNotParticipant:
                 await cmd.message.edit(
-                    text="**You Still Didn't Join ☹️, Please Join My Updates Channel to use this Bot!**\n\nDue to Overload, Only Channel Subscribers can use the Bot!",
+                    text="**Kamu belum subscribe ☹️, Subscribe dulu buat akses file!**\n\nTekan tombol dibawah ini untuk subscribe!",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                                InlineKeyboardButton("🤖 Subscribe", url=invite_link.invite_link)
                             ],
                             [
                                 InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
@@ -361,7 +357,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                    text="Something went Wrong. Contact my [Support Group](https://t.me/fybadmin).",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
@@ -373,12 +369,7 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/linux_repo"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")
-                    ],
-                    [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("Support Group", url="https://t.me/fybadmin")
                     ]
                 ]
             )
