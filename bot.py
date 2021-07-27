@@ -69,10 +69,10 @@ async def start(bot: Client, cmd: Message):
             elif Config.FORWARD_AS_COPY is False:
                 send_stored_file = await bot.forward_messages(chat_id=cmd.from_user.id, from_chat_id=Config.DB_CHANNEL,
                                                               message_ids=file_id)
-            await send_stored_file.reply_text(
+            await send_stored_file.reply_text(f""
                 )
         except Exception as err:
-            await cmd.reply_text()
+            await cmd.reply_text(f"")
 
 
 @Bot.on_message((filters.document | filters.video | filters.audio) & ~filters.edited)
