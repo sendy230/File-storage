@@ -72,7 +72,7 @@ async def start(bot: Client, cmd: Message):
             await send_stored_file.reply_text(
                 )
         except Exception as err:
-            await cmd.reply_text()
+            await cmd.reply_text(Selamat Menikmati)
 
 
 @Bot.on_message((filters.document | filters.video | filters.audio) & ~filters.edited)
