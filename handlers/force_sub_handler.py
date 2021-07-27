@@ -37,7 +37,7 @@ async def handle_force_sub(bot, cmd):
     except Exception:
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="Ada yang salah hubungi [Support Group](https://t.me/linux_repo).",
+            text="Ada yang salah Coba Lagi Beberapa Menit.",
             parse_mode="markdown",
             disable_web_page_preview=True
         )
